@@ -17,7 +17,7 @@ public class MyPlaylist implements Cloneable {
 	private boolean Looping;                   //  variable that controls whether the user is in the program or has quit
 	private static int numPlaylists= 0;        //  variable used to count the number of total playlists
 	private static boolean makeNew = false;    //  variable used to control whether a new playlist will be made
-	private static int c = 0;                  //  variable used to access which playlist the user is in
+	private static int currentPlaylist = 0;    //  variable used to access which playlist the user is in
 	private static boolean doUnion = false;	   //  variable to control when a union function will be used
     public static boolean doAppend = false;    //  variable to control when a append function will be used
     
@@ -243,7 +243,7 @@ public class MyPlaylist implements Cloneable {
 		try {
 			TimeUnit.MILLISECONDS.sleep(500);
 	    	System.out.print("Which playlist would you like to use? ");
-	    	c = S.nextInt() - 1;
+	    	currentPlaylist= S.nextInt() - 1;
 		}catch(InterruptedException ie){
 			ie.printStackTrace();
 		}
@@ -272,7 +272,7 @@ public class MyPlaylist implements Cloneable {
 	}  
    
 	public static int getC(){
-    	return c;
+    	return currentPlaylist;
 	}
 
     public int getNumSongs(){
@@ -301,7 +301,7 @@ public class MyPlaylist implements Cloneable {
 	    	System.out.println(
 	            	"In addition to this, you have " + (numPlaylists + 1) +" playlist(s). \nYou can have " + (100 - (numPlaylists+1))
 	            	+ " more.\n"
-	            	+ "You are currently on playlist "+ (c + 1)+ ".\n" );
+	            	+ "You are currently on playlist "+ (currentPlaylist+ 1)+ ".\n" );
 	    	TimeUnit.MILLISECONDS.sleep(800);
 	    	System.out.println(
 	            	"\033[35mWhat would you like to do?\n\n");
