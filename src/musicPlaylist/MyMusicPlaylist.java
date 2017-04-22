@@ -12,31 +12,26 @@ import java.util.*;
 *   ============  APPLICATION CLASS ===================
  */
 
-public class MyMusicPlaylist
-{
-	public static void main(String[] args)
-	{
-//  creates a MyPlyalist array list with a capacity of 100 MyPlaylist objects	 
+public class MyMusicPlaylist {
+	public static void main(String[] args){
+		//  creates a MyPlyalist array list with a capacity of 100 MyPlaylist objects	 
     	MyPlaylist [] List = new MyPlaylist[100];
     	List[0] = new MyPlaylist();
     	Scanner S = new Scanner(System.in);
  	 
     	System.out.println("Welcome to the app of all apps, The Music Playlist.");
-//  puts user into a loop while program is still running    	
-do
-    	{
+    	//  puts user into a loop while program is still running    	
+do {
 //  determines which playlist the user is in
         	List[MyPlaylist.getC()].UserChoice( );
 //  if the user makes a new playlist, this code creates a new playlist and updates the playlist count  	 
-        	if (MyPlaylist.getMakeNew())
-        	{
-           	List[MyPlaylist.getNumPlaylists()] = new MyPlaylist();
+        	if (MyPlaylist.getMakeNew()){
+        		List[MyPlaylist.getNumPlaylists()] = new MyPlaylist();
             	System.out.println("Playlist " + (MyPlaylist.getNumPlaylists() + 1) + " has been created.\n\n");
-           	MyPlaylist.setMakeNew();
+            	MyPlaylist.setMakeNew();
         	}
 //  if user wants to Union (x + y = z) two playlists	 
-        	if (MyPlaylist.getDoUnion())
-        	{
+        	if (MyPlaylist.getDoUnion()){
             	System.out.print("Enter the first Playlist you want to add.");
             	int one = S.nextInt();
             	System.out.print("Enter the second Playlist you want to add.");
@@ -57,8 +52,7 @@ do
         	}
 
 //   if user wants to append a playlist (x += y)           	 
-            	if (MyPlaylist.getDoAppend())
-            	{
+            	if (MyPlaylist.getDoAppend()){
             	int nS;
             	System.out.print("Enter the Playlist you would like to append.");
             	int one = S.nextInt();
@@ -67,16 +61,14 @@ do
             	int spaceLeft = List[one - 1].getPlaylist().length - (List[one - 1].getNumSongs());
 
 //  if there is not enough space in the array to add all the songs
-            	if (spaceLeft > 0 && spaceLeft < List[two - 1].getNumSongs())
-            	{
+            	if (spaceLeft > 0 && spaceLeft < List[two - 1].getNumSongs()){
             	System.arraycopy(List[two - 1].getPlaylist(), 0, List[one - 1].getPlaylist(), List[one - 1].getNumSongs(), spaceLeft);
             	System.out.println("There was not enough space to append all of Playlist " + two + " to "
                     	+ "Playlist " + one + ".\nHowever, " + spaceLeft + " elements were able to be added.");
             	nS = List[one - 1].getNumSongs() + spaceLeft;
             	List[one - 1].setNumSongs(nS);
             	}
-            	else if (spaceLeft >= List[two - 1].getNumSongs())
-            	{
+            	else if (spaceLeft >= List[two - 1].getNumSongs()){
                 	System.arraycopy(List[two - 1].getPlaylist(), 0, List[one - 1].getPlaylist(), List[one - 1].getNumSongs(), List[two - 1].getNumSongs());
                 	System.out.println("Playlist " + two + " was appended on to the end of Playlist " + one + "\nTo view the appended playlist, go to the playlist that was changed using Choice #6.");
                 	nS = List[one - 1].getNumSongs() + List[two - 1].getNumSongs();
