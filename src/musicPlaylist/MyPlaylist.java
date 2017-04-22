@@ -310,7 +310,7 @@ public class MyPlaylist implements Cloneable {
 	    			"You have the following options:\n\t1. Add a song to your playlist\n"
 	            	+ "\t2. Remove a song from your playlist\n\t3. Display your playlist\n"
 	            	+ "\t4. Search for a specific song in your playlist\n\t5. Make a new playlist\n "
-	            	+ "\t6. Change the playlist you are working on.\n\t7. Create a new playlist"
+	            	+ "\t6. Switch to another playlist.\n\t7. Create a new playlist"
 	            	+ " containing two existing playlists (UNION).\n\t8. Add an existing playlist"
 	            	+ " after another (APPEND).\n\t9. Display song at play."
 	            	+ "\n\t10. Exit the program.\n\n");
