@@ -23,7 +23,7 @@ public class MyMusicPlaylist {
     	// puts user into a loop while program is still running    	
     	do {
     		// determines which playlist the user is in
-        	List[MyPlaylist.getC()].UserChoice( );
+        	List[MyPlaylist.getCurrentPlaylist()].UserChoice( );
         	
         	// if the user makes a new playlist, this code creates a new playlist and updates the playlist count  	 
         	if (MyPlaylist.getMakeNew()){
@@ -83,7 +83,7 @@ public class MyMusicPlaylist {
             	}
     	}
     	// do while condition is met while user does not exit system
-    	while (List[MyPlaylist.getC()].GetLoop( )); 
+    	while (List[MyPlaylist.getCurrentPlaylist()].GetLoop( )); 
 	}
 }
 

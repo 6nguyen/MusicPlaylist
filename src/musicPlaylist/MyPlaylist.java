@@ -271,7 +271,7 @@ public class MyPlaylist implements Cloneable {
     	return numPlaylists;
 	}  
    
-	public static int getC(){
+	public static int getCurrentPlaylist(){
     	return currentPlaylist;
 	}
 
